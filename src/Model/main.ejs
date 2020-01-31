@@ -32,13 +32,19 @@
 
     <div class="team-roster-container">
         <% teamMember.forEach(function(member) { %>
-            <div>
-                <%= member.name %>
-            </div>
-            <% }); %>
+            <% if(member.getRole() === 'Engineer') { %>
+            <%- include('engineer', {member: member}) %>
+            <% } %>
+            <% if(member.getRole() === 'Intern') { %>
+                <%- include('intern', {member: member}) %>
+                <% } %>
+                <% if(member.getRole() === 'Manager') { %>
+                    <%- include('manager', {member: member}) %>
+                    <% } %>
+                    <% }); %>
         
 
-        <div class="card">
+        <!--<div class="card">
             <h5 class="card-header">
                 Tri
                 Engineer
@@ -68,7 +74,7 @@
             </div>
             
         </div>
-    </div>
+    </div>-->
     
 </body>
 </html>
