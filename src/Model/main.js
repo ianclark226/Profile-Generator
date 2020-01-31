@@ -34,6 +34,8 @@ class Main {
 
         const results = ejs.render(ejsTemplate, {
             teamMember: this._teamArray
+        }, {
+            filename: templatePath
         });
 
         console.log(results);
