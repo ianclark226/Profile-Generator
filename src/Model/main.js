@@ -1,10 +1,13 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const path = require('path');
+const util = require('util');
 
 const Engineer = require('./Engineer');
 const Intern = require('./Intern');
 const Manager = require('./Manager');
+
+const writeFileAsync = util.promisify(fs.writeFile);
 
 
 
@@ -20,7 +23,7 @@ class Main {
        }
        
        const results = Main._templateStart + teamHTMLString + Main._templateEnd;
-       await false.writeFile(path.resolve('..', 'dist', 'easy.htjml'));
+       await writeFileAsync(path.resolve(__dirname, '..', 'dist', 'easy.html'), results);
     }
 
     async run() {
