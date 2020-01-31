@@ -2,6 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const path = require('path');
 const util = require('util');
+const ejs = require('ejs');
 
 const Engineer = require('./Engineer');
 const Intern = require('./Intern');
@@ -38,7 +39,7 @@ class Main {
             filename: templatePath
         });
 
-        console.log(results);
+        await writeFileAsync(path.resolve(__dirname, '..', 'dist', 'hard.html', results));
 
     }
 
@@ -141,7 +142,8 @@ Main._ENGINEER = 'engineer';
 Main._INTERN = 'intern';
 Main._MANAGER = 'manager';
 
-Main._templateStart = `<!DOCTYPE html>
+Main._templateStart = `
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -177,39 +179,11 @@ Main._templateStart = `<!DOCTYPE html>
     `;
 
     Main._templateEnd = `
-        <div class="card">
-            <h5 class="card-header">
-                Tri
-                Engineer
-
-            </h5>
-            <div class="card-body">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID: 1</li>
-                    <li class="list-group-item">Email: 123</li>
-                    <li class="list-group-item">Office Number</li>
-                </ul>
-            </div>
-
-
-        </div>
-        <div class="card">
-            <h5 class="card-header">
-                Tri
-                Engineer
-            </h5>
-            <div class="card-body">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID: 1</li>
-                    <li class="list-group-item">Email: 123</li>
-                    <li class="list-group-item">Office Number</li>
-                </ul>
-            </div>
-            
-        </div>
+        
     </div>
     
 </body>
-</html>`
+</html>
+`
 
 module.exports = Main;

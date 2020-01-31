@@ -1,7 +1,7 @@
 const Employee = require('./Employee');
 module.exports = class Engineer extends Employee {
-    constructor(name, id, email, github) {
-        super(name, id, email);
+    constructor(name, email, github) {
+        super(name, email);
         this._github = github;
        
     }
@@ -22,8 +22,9 @@ module.exports = class Engineer extends Employee {
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${this._id} 1</li>
                     <li class="list-group-item">Email: ${this._email} 123</li>
-                    <li class="list-group-item">Office Number ${this._roomNumber}</li>
+                    <li class="list-group-item">Office Number ${this._github}</li>
                 </ul>
+            </div>
             </div>
             `;
 
