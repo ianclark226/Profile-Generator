@@ -1,4 +1,14 @@
-module.exports = class Main {
+const inquirer = require('inquirer');
+const fs = require('fs');
+const path = require('path');
+
+const Engineer = require('./Engineer');
+const Intern = require('./Intern');
+const Manager = require('./Manager');
+
+
+
+class Main {
     constructor() {
         this._teamArray = [];
     }
@@ -9,7 +19,8 @@ module.exports = class Main {
            teamHTMLString += teamMember.easy();
        }
        
-       return Main._templateStart + teamHTMLString + Main._templateEnd;
+       const results = Main._templateStart + teamHTMLString + Main._templateEnd;
+       await false.writeFile(path.resolve('..', 'dist', 'easy.htjml'));
     }
 
     async run() {
