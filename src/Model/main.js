@@ -3,6 +3,15 @@ module.exports = class Main {
         this._teamArray = [];
     }
 
+    async easy() {
+       let teamHTMLString = '';
+       for(const teamMember of this._teamArray) {
+           teamHTMLString += teamMember.easy();
+       }
+       
+       return Main._templateStart + teamHTMLString + Main._templateEnd;
+    }
+
     async run() {
         const { teamSize } = await inquirer.prompt([{
             type: 'input',
@@ -91,5 +100,76 @@ module.exports = class Main {
 Main._ENGINEER = 'engineer';
 Main._INTERN = 'intern';
 Main._MANAGER = 'manager';
+
+Main._templateStart = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+    .page-header {
+        background: gray;
+        padding: 30px;
+        font-size: xx-large;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .team-roster-container{
+        display: flex;
+        padding: 50;
+    }
+
+    .card:not(:last-child) {
+        margin-right: 20px;
+    }
+    </style>
+    
+    <title>My Team App</title>
+</head>
+<body>
+
+    <div class = "page-header">My Team of Villians</div>
+
+    <div class="team-roster-container">
+    `;
+
+    Main._templateEnd = `
+        <div class="card">
+            <h5 class="card-header">
+                Tri
+                Engineer
+
+            </h5>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">ID: 1</li>
+                    <li class="list-group-item">Email: 123</li>
+                    <li class="list-group-item">Office Number</li>
+                </ul>
+            </div>
+
+
+        </div>
+        <div class="card">
+            <h5 class="card-header">
+                Tri
+                Engineer
+            </h5>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">ID: 1</li>
+                    <li class="list-group-item">Email: 123</li>
+                    <li class="list-group-item">Office Number</li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>`
 
 module.exports = Main;
