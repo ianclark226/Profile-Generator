@@ -7,7 +7,9 @@ const Engineer = require('./Engineer');
 const Intern = require('./Intern');
 const Manager = require('./Manager');
 
+const readFileAsync = util.promisify(fs.readfile);
 const writeFileAsync = util.promisify(fs.writeFile);
+
 
 
 
@@ -27,11 +29,14 @@ class Main {
     }
 
     async _hard() {
-        const ejsTemplate = await readFileAsync(path.resolve(__dirname, '..', 'template', 'main.ejs'));
+        const templatePath = path.resolve(__dirname, '..', 'templates', 'main.ejs');
+        const ejsTemplate = await readFileAsync(templatePath, 'utf-8');
 
         const results = ejs.render(ejsTemplate, {
             teamMember: this._teamArray
         });
+
+        console.log(results);
 
     }
 
