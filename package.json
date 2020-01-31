@@ -4,10 +4,11 @@
   "description": "OOP and testing for week 10 homework",
   "main": "app.js",
   "directories": {
-    "lib": "lib",
+    "src": "src",
     "test": "test"
   },
   "scripts": {
+      "start": "node src/main.js",
     "test": "jest --verbose test/*"
   },
   "repository": {
