@@ -1,18 +1,18 @@
 const Employee = require('./Employee');
 
 module.exports = class Intern extends Employee {
-    constructor(name, email, school) {
-        super(name, email);
-        this._school = school;
-    }
+	constructor(name, id, email, school) {
+		super(name, id, email);
+		this._school = school;
+	}
 
-    getSchool() {
-        return this._school;
-    }
+	getSchool() {
+		return this._school;
+	}
 
-    easy() {
-        return `
-        <div class="card">
+	easy() {
+		return `
+			<div class="card">
 				<h5 class="card-header">
 					${this._name}
 					Intern
@@ -24,7 +24,7 @@ module.exports = class Intern extends Employee {
 						<li class="list-group-item">School: ${this._school}</li>
 					</ul>
 				</div>
-            </div>
-            `;
-    }
+			</div>
+		`;
+	}
 }

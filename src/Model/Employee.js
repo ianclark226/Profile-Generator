@@ -1,34 +1,25 @@
-const shortid = require('shortid');
+//const shortid = require('shortid');
 
 module.exports = class Employee {
-    constructor(id, name, email, title) {
-        this._id = id;
-        this._name = name;
-        this._email = email;
-        this._title = title;
-       
-    }
+	constructor(name, id,  email) {
+		this._id = id;
+		this._name = name;
+		this._email = email;
+	}
 
-    getId() {
-        return this._id;
-    }
+	getId() {
+		return this._id;
+	}
 
-    
+	getName() {
+		return this._name;
+	}
 
-    getName() {
-        return this._name;
-    
-    }
+	getEmail() {
+		return this._email;
+	}
 
-    getEmail() {
-        return this._email;
-    }
-
-    getTitle() {
-        return this._title;
-    }
-
-    getRole() {
-        return this.constructor.name;
-    }
+	getRole() {
+		return this.constructor.name;
+	}
 }

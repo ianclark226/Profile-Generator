@@ -1,16 +1,16 @@
 const Employee = require('./Employee');
 
 module.exports = class Manager extends Employee {
-    constructor(name, email, roomNumber) {
-    super(name, email);
-    this._roomNumber = roomNumber;
-    }
+	constructor(name, id, email, roomNumber) {
+		super(name, id, email);
+		this._roomNumber = roomNumber;
+	}
 
-    getRoomNumber() {
-        return this._roomNumber;
-    }
+	getRoomNumber() {
+		return this._roomNumber;
+	}
 
-    easy() {
+	easy() {
 		return `
 			<div class="card">
 				<h5 class="card-header">
@@ -25,6 +25,6 @@ module.exports = class Manager extends Employee {
 					</ul>
 				</div>
 			</div>
-        `
-    }
+		`;
+	}
 }

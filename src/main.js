@@ -1,4 +1,4 @@
-const Main = require('./Model/main');
+const Main = require('./Model/Main');
 
-const program = new Main;
-    program.run();
+const program = new Main();
+program.run();
