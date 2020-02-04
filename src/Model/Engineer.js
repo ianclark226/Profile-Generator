@@ -10,7 +10,7 @@ module.exports = class Engineer extends Employee {
 		return this._github;
 	}
 
-	easy() {
+	first() {
 		return `
 			<div class="card">
 				<h5 class="card-header">

@@ -10,7 +10,7 @@ module.exports = class Manager extends Employee {
 		return this._roomNumber;
 	}
 
-	easy() {
+	first() {
 		return `
 			<div class="card">
 				<h5 class="card-header">
@@ -25,6 +25,10 @@ module.exports = class Manager extends Employee {
 					</ul>
 				</div>
 			</div>
-		`;
-	}
+        `;
+        
+    }
+    
 }
+
+

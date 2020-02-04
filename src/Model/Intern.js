@@ -10,7 +10,7 @@ module.exports = class Intern extends Employee {
 		return this._school;
 	}
 
-	easy() {
+	first() {
 		return `
 			<div class="card">
 				<h5 class="card-header">

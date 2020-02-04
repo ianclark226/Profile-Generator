@@ -9,39 +9,29 @@ const Intern = require('./Intern');
 const Manager = require('./Manager');
 
 //const readFileAsync = util.promisify(fs.readFile);
-const writeFileAsync = util.promisify(fs.writeFile);
+const writeFileSync = util.promisify(fs.writeFile);
 
 class Main {
 	constructor() {
-		this._teamArray = [];
+        this._teamArray = [];
 	}
-
-	async _easy() {
+  
+	async _first(_teamArray) {
+       
 		let teamHTMLString = '';
-		for (const teamMember of this._teamArray) {
-			teamHTMLString += teamMember.easy();
+		for (const teamMember of _teamArray) {
+			teamHTMLString += teamMember.first();
 		}
-
-		const result = Main._templateStart + teamHTMLString + Main._templateEnd;
-
-		await writeFileAsync(path.resolve(__dirname, '..', 'src', 'easy.html'), result);
+        
+        const result = Main._templateStart + teamHTMLString + Main._templateEnd;
+        
+        await fs.writeFileSync(path.resolve(__dirname, 'MyTeam.html'), result);
+        
 	}
 
-	// async _hard() {
-	// 	const templatePath = path.resolve(__dirname, '..', 'templates', 'main.ejs');
+	
 
-	// 	const ejsTemplate = await readFileAsync(templatePath, 'utf-8');
-
-	// 	const result = ejs.render(ejsTemplate, {
-	// 		teamMembers: this._teamArray
-	// 	}, {
-	// 		filename: templatePath
-	// 	});
-
-	// 	await writeFileAsync(path.resolve(__dirname, '..', 'dist', 'hard.html'), result);
-	//}
-
-	async run() {
+	async run(first) {
 		const { teamSize } = await inquirer.prompt([{
 			type: 'input',
 			name: 'teamSize',
@@ -110,14 +100,15 @@ class Main {
 			if (role === Main._MANAGER) {
 				this._teamArray.push(new Manager(name, email, roomNumber));
 			}
-		}
-
+        }
+        
 		this._teamArray = [
 			new Engineer('engineer name', 'engineer email', 'engineer github'),
 			new Intern('intern name', 'intern email', 'intern school'),
 			new Manager('manager name', 'manager email', 'manager room number'),
-		]
-
+        ]
+        
+        first(this._teamArray);
 		//await this._hard();
 	}
 }
@@ -154,7 +145,8 @@ Main._templateStart = `
 	</head>
 	<body>
 		<div class="page-header">My Team</div>
-		<div class="team-roster-container">
+        <div class="team-roster-container">
+        
 `;
 
 Main._templateEnd = `
