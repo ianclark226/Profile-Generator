@@ -50,7 +50,7 @@ class Main {
 		}]);
 
 		for (let i = 0; i < teamSize; i++) {
-			console.log('===========================');
+			
 			const response = await inquirer.prompt([
 				{
 					type: 'input',
