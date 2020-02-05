@@ -2,13 +2,13 @@ const inquirer = require('inquirer');
 const fs = require('fs');
  const path = require('path');
  const util = require('util');
-//const ejs = require('ejs');
+
 
 const Engineer = require('./Engineer');
 const Intern = require('./Intern');
 const Manager = require('./Manager');
 
-//const readFileAsync = util.promisify(fs.readFile);
+
 const writeFileSync = util.promisify(fs.writeFile);
 
 class Main {
@@ -110,14 +110,10 @@ class Main {
 			}
         }
         
-		// this._teamArray = [
-		// 	new Engineer('engineer name', 'engineer email', 'engineer github'),
-		// 	new Intern('intern name', 'intern email', 'intern school'),
-		// 	new Manager('manager name', 'manager email', 'manager room number'),
-        // ]
+		
         
         await this._first();
-		//await this._hard();
+		
 	}
 }
 
