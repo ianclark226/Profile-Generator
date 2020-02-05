@@ -41,12 +41,18 @@ class Main {
 		}]);
 
 		for (let i = 0; i < teamSize; i++) {
+            console.log('+++++++++++++++++++++++++++++');
 			
 			const response = await inquirer.prompt([
 				{
 					type: 'input',
 					name: 'name',
 					message: 'Please input your name',
+                },
+                {
+					type: 'input',
+					name: 'id',
+					message: 'Please input your id',
 				},
 				{
 					type: 'input',
@@ -84,7 +90,8 @@ class Main {
 			]);
 
 			const {
-				name,
+                name,
+                id,
 				email,
 				role,
 				github,
@@ -93,13 +100,13 @@ class Main {
 			} = response;
 
 			if (role === Main._ENGINEER) {
-				this._teamArray.push(new Engineer(name, email, github));
+				this._teamArray.push(new Engineer(name, id, email, github));
 			}
 			if (role === Main._INTERN) {
-				this._teamArray.push(new Intern(name, email, school));
+				this._teamArray.push(new Intern(name, id, email, school));
 			}
 			if (role === Main._MANAGER) {
-				this._teamArray.push(new Manager(name, email, roomNumber));
+				this._teamArray.push(new Manager(name, id, email, roomNumber));
 			}
         }
         
