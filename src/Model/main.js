@@ -25,7 +25,7 @@ class Main {
         
         const result = Main._templateStart + teamHTMLString + Main._templateEnd;
         
-        await fs.writeFileSync(path.resolve(__dirname, 'MyTeam.html'), result);
+        await fs.writeFileSync(path.resolve('output/MyTeam.html'), result);
         
         
 	}
