@@ -27,8 +27,11 @@ module.exports = class Manager extends Employee {
 			</div>
         `;
         
+        
     }
     
+    
 }
+
 
 

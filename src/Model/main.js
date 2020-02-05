@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const path = require('path');
-const util = require('util');
+ const path = require('path');
+ const util = require('util');
 //const ejs = require('ejs');
 
 const Engineer = require('./Engineer');
@@ -19,13 +19,14 @@ class Main {
 	async _first(_teamArray) {
        
 		let teamHTMLString = '';
-		for (const teamMember of _teamArray) {
+		for (const teamMember of this._teamArray) {
 			teamHTMLString += teamMember.first();
 		}
         
         const result = Main._templateStart + teamHTMLString + Main._templateEnd;
         
         await fs.writeFileSync(path.resolve(__dirname, 'MyTeam.html'), result);
+        
         
 	}
 
@@ -102,13 +103,13 @@ class Main {
 			}
         }
         
-		this._teamArray = [
-			new Engineer('engineer name', 'engineer email', 'engineer github'),
-			new Intern('intern name', 'intern email', 'intern school'),
-			new Manager('manager name', 'manager email', 'manager room number'),
-        ]
+		// this._teamArray = [
+		// 	new Engineer('engineer name', 'engineer email', 'engineer github'),
+		// 	new Intern('intern name', 'intern email', 'intern school'),
+		// 	new Manager('manager name', 'manager email', 'manager room number'),
+        // ]
         
-        first(this._teamArray);
+        await this._first();
 		//await this._hard();
 	}
 }
@@ -146,6 +147,7 @@ Main._templateStart = `
 	<body>
 		<div class="page-header">My Team</div>
         <div class="team-roster-container">
+        
         
 `;
 

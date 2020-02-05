@@ -27,41 +27,25 @@
     <title>My Team App</title>
 </head>
 <body>
-
-    <div class = "page-header">My Team of Villians</div>
-
-    <div class="team-roster-container">
-        <div class="card">
-            <h5 class="card-header">
-                Tri
-                Engineer
-
-            </h5>
-            <div class="card-body">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID: 1</li>
-                    <li class="list-group-item">Email: 123</li>
-                    <li class="list-group-item">Github</li>
-                </ul>
-            </div>
-
-
-        </div>
-        <div class="card">
-            <h5 class="card-header">
-                Tri
-                Engineer
-            </h5>
-            <div class="card-body">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID: 1</li>
-                    <li class="list-group-item">Email: 123</li>
-                    <li class="list-group-item">Office Number</li>
-                </ul>
-            </div>
-            
-        </div>
-    </div>
+<script>
+    const first = () => {
+		return `
+			<div class="card">
+				<h5 class="card-header">
+					${this._name}
+					Engineer
+				</h5>
+				<div class="card-body">
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">Id: ${this._id}</li>
+						<li class="list-group-item">Email: ${this._email}</li>
+						<li class="list-group-item">Github: ${this._github}</li>
+					</ul>
+				</div>
+			</div>
+		`;
+    }
+</script>
     
 </body>
 </html>
