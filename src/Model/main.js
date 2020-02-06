@@ -175,7 +175,7 @@ Main._templateStart = `
 	<body>
 		<div class="page-header">My Team of Villians</div>
         <div class="team-roster-container">
-        <i class="fas fa-archway"></i>
+        
         
         
 `;

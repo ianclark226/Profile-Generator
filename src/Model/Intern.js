@@ -15,7 +15,7 @@ module.exports = class Intern extends Employee {
 			<div class="card">
 				<h5 class="card-header">
 					${this._name}
-					Intern
+					: Intern
 				</h5>
 				<div class="card-body">
 					<ul class="list-group list-group-flush">
