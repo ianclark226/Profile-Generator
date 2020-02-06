@@ -17,6 +17,7 @@ module.exports = class Engineer extends Employee {
 				<h5 class="card-header">
 					${this._name}
                     : Engineer
+                    <i class="fas fa-archway"></i>
                     
 				</h5>
 				<div class="card-body">
@@ -27,10 +28,13 @@ module.exports = class Engineer extends Employee {
 					</ul>
                 </div>
                 </div>
+                <script src = "https://kit.fontawesome.com/c502137733.js"></script>
 			
 		`;
 	}
 }
+
+
 
  
 

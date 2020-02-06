@@ -15,7 +15,8 @@ module.exports = class Intern extends Employee {
 			<div class="card">
 				<h5 class="card-header">
 					${this._name}
-					: Intern
+                    : Intern
+                    <i class="fas fa-school"></i>
 				</h5>
 				<div class="card-body">
 					<ul class="list-group list-group-flush">
@@ -24,7 +25,8 @@ module.exports = class Intern extends Employee {
 						<li class="list-group-item">School: ${this._school}</li>
 					</ul>
 				</div>
-			</div>
+            </div>
+            <script src = "https://kit.fontawesome.com/c502137733.js"></script>
 		`;
 	}
 }
