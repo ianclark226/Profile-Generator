@@ -16,7 +16,8 @@ module.exports = class Engineer extends Employee {
         <div class="card">
 				<h5 class="card-header">
 					${this._name}
-					Engineer
+                    Engineer
+                    <i class="fas fa-archway"></i>
 				</h5>
 				<div class="card-body">
 					<ul class="list-group list-group-flush">

@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <style>
     .page-header {
-        background: gray;
+        background: black;
         padding: 30px;
         font-size: xx-large;
         text-align: center;
@@ -21,7 +22,22 @@
 
     .card:not(:last-child) {
         margin-right: 20px;
+       
     }
+
+    .card {
+				box-shadow: 0 0 10px #000000b3;
+			}
+
+
+    .page-header{
+				color: whitesmoke;
+			}
+
+            .card-header{
+				background-color:teal;
+				color: whitesmoke;
+			}
     </style>
     
     <title>My Team App</title>
@@ -33,7 +49,8 @@
 			<div class="card">
 				<h5 class="card-header">
 					${this._name}
-					Engineer
+                    Engineer
+                    <i class="fas fa-archway"></i>
 				</h5>
 				<div class="card-body">
 					<ul class="list-group list-group-flush">
