@@ -12,7 +12,8 @@ module.exports = class Engineer extends Employee {
 	}
 
 	first() {
-		return `
+        return `
+        <div class="col-3">
         <div class="card">
 				<h5 class="card-header">
 					${this._name}
@@ -26,6 +27,7 @@ module.exports = class Engineer extends Employee {
 						<li class="list-group-item">Email: ${this._email}</li>
 						<li class="list-group-item">Github: ${this._github}</li>
 					</ul>
+                </div>
                 </div>
                 </div>
                 <script src = "https://kit.fontawesome.com/c502137733.js"></script>
